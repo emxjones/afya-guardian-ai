@@ -22,10 +22,41 @@ export default {
         primary: {
           DEFAULT: "hsl(var(--primary))",
           foreground: "hsl(var(--primary-foreground))",
+          light: "hsl(var(--primary-light))",
+          dark: "hsl(var(--primary-dark))",
         },
         secondary: {
           DEFAULT: "hsl(var(--secondary))",
           foreground: "hsl(var(--secondary-foreground))",
+          light: "hsl(var(--secondary-light))",
+          dark: "hsl(var(--secondary-dark))",
+        },
+        maternal: {
+          DEFAULT: "hsl(var(--maternal))",
+          foreground: "hsl(var(--maternal-foreground))",
+          light: "hsl(var(--maternal-light))",
+        },
+        postnatal: {
+          DEFAULT: "hsl(var(--postnatal))",
+          foreground: "hsl(var(--postnatal-foreground))",
+          light: "hsl(var(--postnatal-light))",
+        },
+        general: {
+          DEFAULT: "hsl(var(--general))",
+          foreground: "hsl(var(--general-foreground))",
+          light: "hsl(var(--general-light))",
+        },
+        success: {
+          DEFAULT: "hsl(var(--success))",
+          foreground: "hsl(var(--success-foreground))",
+        },
+        warning: {
+          DEFAULT: "hsl(var(--warning))",
+          foreground: "hsl(var(--warning-foreground))",
+        },
+        danger: {
+          DEFAULT: "hsl(var(--danger))",
+          foreground: "hsl(var(--danger-foreground))",
         },
         destructive: {
           DEFAULT: "hsl(var(--destructive))",

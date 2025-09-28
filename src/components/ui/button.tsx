@@ -15,6 +15,13 @@ const buttonVariants = cva(
         secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
         ghost: "hover:bg-accent hover:text-accent-foreground",
         link: "text-primary underline-offset-4 hover:underline",
+        // Healthcare-specific variants
+        maternal: "bg-maternal text-maternal-foreground hover:bg-maternal/90 shadow-sm",
+        postnatal: "bg-postnatal text-postnatal-foreground hover:bg-postnatal/90 shadow-sm",
+        general: "bg-general text-general-foreground hover:bg-general/90 shadow-sm",
+        success: "bg-success text-success-foreground hover:bg-success/90",
+        warning: "bg-warning text-warning-foreground hover:bg-warning/90",
+        danger: "bg-danger text-danger-foreground hover:bg-danger/90",
       },
       size: {
         default: "h-10 px-4 py-2",
