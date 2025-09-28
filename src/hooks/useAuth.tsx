@@ -60,19 +60,31 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     const data = await response.json();
     setToken(data.access_token);
     
-    // Get user info by decoding token or making another request
-    // For now, we'll store minimal info and fetch full profile later
-    const userData = {
-      id: 1, // This should come from your backend
-      username: credentials.username,
-      email: "", // Will be filled from profile
-      full_name: "", // Will be filled from profile
-      account_type: "general" as const, // Will be filled from profile
-    };
+    // Fetch user profile with the token
+    const profileResponse = await fetch(`${API_BASE_URL}/api/v1/auth/me`, {
+      headers: {
+        "Authorization": `Bearer ${data.access_token}`,
+      },
+    });
+
+    if (profileResponse.ok) {
+      const userData = await profileResponse.json();
+      setUser(userData);
+      localStorage.setItem("afyajamii_user", JSON.stringify(userData));
+    } else {
+      // Fallback if profile endpoint doesn't exist
+      const userData = {
+        id: 1,
+        username: credentials.username,
+        email: "",
+        full_name: "",
+        account_type: "general" as const,
+      };
+      setUser(userData);
+      localStorage.setItem("afyajamii_user", JSON.stringify(userData));
+    }
     
-    setUser(userData);
     localStorage.setItem("afyajamii_token", data.access_token);
-    localStorage.setItem("afyajamii_user", JSON.stringify(userData));
   };
 
   const signup = async (userData: {
